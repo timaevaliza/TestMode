@@ -1,8 +1,11 @@
 package ru.netology.test;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.chrome.ChromeOptions;
 import ru.netology.data.DataGenerator;
 import ru.netology.data.RegistrationDto;
 
@@ -12,8 +15,18 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationTest {
+
+    @BeforeAll
+    static void setUpAll() {
+        Configuration.headless = true;
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        Configuration.browserCapabilities = options;
+    }
     @BeforeEach
     void setup() {
+        Configuration.headless = true;
         open("http://localhost:9999");
     }
 
