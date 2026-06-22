@@ -26,8 +26,7 @@ public class RegistrationTest {
     }
     @BeforeEach
     void setup() {
-        Configuration.headless = true;
-        open("http://localhost:9999");
+        open("https://netology.ru");
     }
 
     @Test

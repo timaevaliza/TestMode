@@ -11,8 +11,7 @@ import static io.restassured.RestAssured.given;
 
     public class DataGenerator {
         private static final RequestSpecification requestSpec = new RequestSpecBuilder()
-                .setBaseUri("http://localhost")
-                .setPort(9999)
+                .setBaseUri("https://netology.ru")
                 .setAccept(ContentType.JSON)
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.ALL)
