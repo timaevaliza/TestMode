@@ -19,7 +19,6 @@ public class RegistrationTest {
     @BeforeAll
     static void setUpAll() {
         Configuration.headless = true;
-        // Принудительно выставляем глобальный таймаут 10 секунд
         Configuration.timeout = 10000;
 
         ChromeOptions options = new ChromeOptions();
@@ -30,7 +29,8 @@ public class RegistrationTest {
 
     @BeforeEach
     void setup() {
-        open("https://app-ibank.netology.ru");
+        // ИСПРАВЛЕНО: Теперь Selenide открывает локально запущенное приложение
+        open("http://localhost:9999");
         $("[data-test-id='login'] input").shouldBe(Condition.visible, Duration.ofSeconds(10));
     }
 
@@ -50,7 +50,7 @@ public class RegistrationTest {
         $("[data-test-id='password'] input").setValue(registeredUser.getPassword());
         $("button[data-test-id='action-login']").click();
         $("[data-test-id='error-notification'] .notification__content")
-                .shouldHave(Condition.text("Пользователь заблокирован"), Duration.ofSeconds(10));
+                .shouldHave(Condition.exactText("Ошибка! Пользователь заблокирован"), Duration.ofSeconds(10));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class RegistrationTest {
         $("[data-test-id='password'] input").setValue(registeredUser.getPassword());
         $("button[data-test-id='action-login']").click();
         $("[data-test-id='error-notification'] .notification__content")
-                .shouldHave(Condition.text("Неверно указан логин или пароль"), Duration.ofSeconds(10));
+                .shouldHave(Condition.exactText("Ошибка! Неверно указан логин или пароль"), Duration.ofSeconds(10));
     }
 
     @Test
@@ -74,7 +74,7 @@ public class RegistrationTest {
         $("[data-test-id='password'] input").setValue(invalidPassword);
         $("button[data-test-id='action-login']").click();
         $("[data-test-id='error-notification'] .notification__content")
-                .shouldHave(Condition.text("Неверно указан логин или пароль"), Duration.ofSeconds(10));
+                .shouldHave(Condition.exactText("Ошибка! Неверно указан логин или пароль"), Duration.ofSeconds(10));
     }
 
     @Test
@@ -85,7 +85,6 @@ public class RegistrationTest {
         $("[data-test-id='password'] input").setValue(notRegisteredUser.getPassword());
         $("button[data-test-id='action-login']").click();
         $("[data-test-id='error-notification'] .notification__content")
-                .shouldHave(Condition.text("Неверно указан логин или пароль"), Duration.ofSeconds(10));
+                .shouldHave(Condition.exactText("Ошибка! Неверно указан логин или пароль"), Duration.ofSeconds(10));
     }
 }
-

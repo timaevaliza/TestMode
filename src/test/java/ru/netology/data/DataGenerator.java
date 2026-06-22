@@ -11,8 +11,8 @@ import static io.restassured.RestAssured.given;
 
 public class DataGenerator {
     private static final RequestSpecification requestSpec = new RequestSpecBuilder()
-            // ИСПРАВЛЕНО: Указан точный адрес удаленного тестового стенда
-            .setBaseUri("https://app-ibank.netology.ru")
+            // ИСПРАВЛЕНО: Запросы должны идти на локально запущенное приложение
+            .setBaseUri("http://localhost:9999")
             .setAccept(ContentType.JSON)
             .setContentType(ContentType.JSON)
             .log(LogDetail.ALL)
