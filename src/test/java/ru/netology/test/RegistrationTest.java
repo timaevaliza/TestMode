@@ -30,7 +30,7 @@ public class RegistrationTest {
 
     @BeforeEach
     void setup() {
-        open("https://netology.ru");
+        open("https://app-ibank.netology.ru");
         $("[data-test-id='login'] input").shouldBe(Condition.visible, Duration.ofSeconds(10));
     }
 
