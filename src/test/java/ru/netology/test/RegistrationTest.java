@@ -18,13 +18,7 @@ public class RegistrationTest {
 
     @BeforeAll
     static void setUpAll() {
-        Configuration.headless = true;
-        Configuration.timeout = 10000;
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        Configuration.browserCapabilities = options;
     }
 
     @BeforeEach
