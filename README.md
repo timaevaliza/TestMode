@@ -1,1 +1,15 @@
-[![Java CI with Gradle](https://github.com/timaevaliza/TestMode/actions/workflows/gradle.yml/badge.svg)](https://github.com/timaevaliza/TestMode/actions/workflows/gradle.yml)
+# Домашнее задание по теме «4.1. Репортинг (Allure)»
+
+## Описание проекта
+В проекте настроен фреймворк Allure, интегрированный с Selenide для автоматического логирования шагов и прикрепления скриншотов.
+
+## Команды запуска тестов и отчетов
+1. Запуск тестов: `./gradlew clean test`
+2. Открытие Allure отчета: `./gradlew allureServe`
+
+## Скриншоты отчетов Allure
+*Здесь вы можете вставить скриншот главного экрана Allure Dashboard:*
+[Вставьте скриншот №1 из буфера обмена]
+
+*Здесь вы можете вставить скриншот с раскрытыми шагами теста и скриншотом страницы:*
+[Вставьте скриншот №2 из буфера обмена]

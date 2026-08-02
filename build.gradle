@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    // СТРОГО ПО ДЗ: Подключаем плагин Allure
+    id 'io.qameta.allure' version '2.12.0'
 }
 
 group = 'ru.netology.javaqa'
@@ -9,14 +11,21 @@ repositories {
     mavenCentral()
 }
 
+// СТРОГО ПО ДЗ: Задаем версию Allure
+allure {
+    version = '2.27.0'
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'io.rest-assured:rest-assured:5.5.0'
     testImplementation 'com.google.code.gson:gson:2.10.1'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation 'com.codeborne:selenide:6.19.1'
-}
 
+    // СТРОГО ПО ДЗ: Зависимость для перехвата шагов Selenide
+    testImplementation 'io.qameta.allure:allure-selenide:2.27.0'
+}
 
 test {
     useJUnitPlatform()
