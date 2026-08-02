@@ -8,8 +8,9 @@
 2. Открытие Allure отчета: `./gradlew allureServe`
 
 ## Скриншоты отчетов Allure
-*Здесь вы можете вставить скриншот главного экрана Allure Dashboard:*
-[Вставьте скриншот №1 из буфера обмена]
 
-*Здесь вы можете вставить скриншот с раскрытыми шагами теста и скриншотом страницы:*
-[Вставьте скриншот №2 из буфера обмена]
+<img width="2464" height="1272" alt="Снимок экрана 2026-08-02 190128" src="https://github.com/user-attachments/assets/6e2c5514-df45-452b-990f-997a730d24b7" />
+
+
+<img width="2498" height="1280" alt="image" src="https://github.com/user-attachments/assets/98047bba-b35b-4481-bcd0-06a02656e90e" />
+
